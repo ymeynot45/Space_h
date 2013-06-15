@@ -28,9 +28,9 @@ APP_NAME = APP_ROOT.basename.to_s
 set :root, APP_ROOT
 
 # Set up the controllers and helpers
-Dir["#{APP_ROOT}/app/uploaders/*rlb"].each { |file| require file }
-Dir["#{APP_ROOT}/app/controllers/*rlb"].each { |file| require file }
-Dir["#{APP_ROOT}/app/helpers/*rlb"].each { |file| require file }
+Dir["#{APP_ROOT}/app/uploaders/*.rb"].each { |file| require file }
+Dir["#{APP_ROOT}/app/controllers/*.rb"].each { |file| require file }
+Dir["#{APP_ROOT}/app/helpers/*.rb"].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
