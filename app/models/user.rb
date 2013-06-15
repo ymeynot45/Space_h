@@ -1,33 +1,26 @@
 class User < ActiveRecord::Base
-    validates :first_name, :last_name, :password, :email, :presence => :true
-    validates :email, :uniqueness => :true
-    validates :password, :length => { :minimum => 6 }
-    has_many :rounds
+  validates :username, :password, :presence => :true
+  validates :username, :uniqueness => :true
+  validates :password, :length => { :minimum => 6 }
 
-
-  def self.authenticate(params)
-    user = User.find_by_email(params[:email])
-    (user && user.password == params[:password]) ? user : nil
+  def self.authenticate(username, password)
+    user = User.find_by_username(username)
+    (user && user.password == password) ? user : nil
   end
 
   def password
-    @password ||= BCrypt::Password.new(password_hash)
+    password ||= BCrypt::Password.new(password_hash)
   end
 
   def password=(new_password)
-    @password = BCrypt::Password.create(new_password)
-    self.password_hash = @password
+    password = BCrypt::Password.create(new_password)
+    self.password_hash = password
   end
 
-  def self.create(params)
-    p @user = User.new(params)
-    p @user.password = (params[:password])
-    @user.save!
-    @user
+  def self.create(attribs)
+    user = User.new(attribs)
+    user.password = (attribs[:password])
+    user.save!
+    user
   end
-
-  def self.get_rounds_by_user_id(user_id)
-    self.find(user_id).rounds
-  end
-
 end
