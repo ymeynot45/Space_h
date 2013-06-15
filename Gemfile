@@ -1,4 +1,6 @@
 source :rubygems
+#for debuggin
+gem 'pry'
 
 # PostgreSQL driver
 gem 'pg'
