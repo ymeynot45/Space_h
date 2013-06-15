@@ -15,8 +15,8 @@ get '/login' do
 end
 
 post '/login' do
-  @user = User.find_by_username(params[:user][:username])
-  if @user && @user.password == params([:user][:password])
+  user = User.authenticate(params[:username], params[:password])
+  if user  
     session[:user_id] = @user.id 
     redirect to '/games'
   else 
