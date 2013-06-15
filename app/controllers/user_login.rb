@@ -1,5 +1,3 @@
-
-
 post '/create_user' do
   @user =User.new(params[:user])
   if @user.save
