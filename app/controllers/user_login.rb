@@ -2,7 +2,7 @@ post '/create_user' do
   @user =User.new(params[:user])
   if @user.save
     session[:user_id] = @user.id 
-    redirect to '/available_decks'
+    redirect to '/games'
   else
     redirect to '/'
   end
@@ -18,7 +18,7 @@ post '/login' do
   @user = User.find_by_username(params[:user][:username])
   if @user && @user.password == params([:user][:password])
     session[:user_id] = @user.id 
-    redirect to '/available_decks'
+    redirect to '/games'
   else 
     redirect to '/'
   end
