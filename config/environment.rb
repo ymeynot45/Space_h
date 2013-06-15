@@ -25,7 +25,6 @@ require 'erb'
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
 set :root, APP_ROOT
-set :views, Proc.new { File.join(root, "app", "views") }
 
 # Set up the controllers and helpers
 Dir["#{APP_ROOT}/app/uploaders/*.rb"].each { |file| require file }
