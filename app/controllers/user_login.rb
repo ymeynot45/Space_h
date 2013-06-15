@@ -15,8 +15,8 @@ get '/login' do
 end
 
 post '/login' do
-  @user = User.find_by_username(attribs[:user][:username])
-  if @user && @user.password == (attribs([:user][:password])
+  @user = User.find_by_username(params[:user][:username])
+  if @user && @user.password == params([:user][:password])
     session[:user_id] = @user.id 
     redirect to '/available_decks'
   else 
