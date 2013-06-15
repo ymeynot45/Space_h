@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div class="signup_container">
+            <% if @errors %><%= erb :_error, :locals => {errors: @errors }%><% end %>
+            <h1>
+                Welcome
+            </h1>
+            <div class="create_user">
+                <form name='create_user' action='/create_user' method='post'>
+                    <h2>
+                        Sign up:
+                    </h2>
+                    <div class="create_row1">
+                        <label>First Name:</label><input type='text' name='user[first_name]' autofocus="">
+                    </div>
+                    <div class="create_row2">
+                        <label>Last Name:</label><input type='text' name='user[last_name]'>
+                    </div>
+                    <div class="create_row3">
+                        <label>Email:</label><input type='text' name='user[email]'>
+                    </div>
+                    <div class="create_row4">
+                        <label>Password:</label><input type='password' name='user[password]'>
+                    </div>
+                    <div>
+                        <input type='submit' value='Create' id="create">
+                    </div><br>
+                </form>
+            </div>
+            <div class='login'>
+                <form name='login' action='/login' method='post'>
+                    <h2>
+                        Log in:
+                    </h2>
+                    <div class="create_row1">
+                        <label>Email:</label><input type='text' name='user[email]' autofocus="">
+                    </div>
+                    <div class="create_row1">
+                        <label>Password:</label><input type='password' name='user[password]'>
+                    </div>
+                    <div>
+                        <input type='submit' value='Log me in' id="log_in">
+                    </div><br>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<h1>GAME</h1>
+
+<p><%=@cards.back%></p>
+
+
+
+
+<% if @game_over %>
+<a href="/user/<%=current_user.id%>">stats</a>
+<% else %>
+<a href="/game/<%=@deck.id%>?card_id=<%=@current_card + 1%>">next</a>
+<% end %>
