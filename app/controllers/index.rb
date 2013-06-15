@@ -9,7 +9,7 @@ end
 
 get '/available_decks' do
   @decks = Deck.get_all_decks
-erb :all_decks
+  erb :all_decks
 end
 
 get '/game/:round_id/:deck_id' do
@@ -31,10 +31,10 @@ post '/new_card/:answer' do
 end
 
 get '/user/:user_id' do
-    user_id = params[:user_id]
-    @rounds = User.get_rounds_by_user_id(user_id.to_i)
-    
-erb :user_profile
+  user_id = params[:user_id]
+  @rounds = User.get_rounds_by_user_id(user_id.to_i)
+  
+  erb :user_profile
 end
 
 
