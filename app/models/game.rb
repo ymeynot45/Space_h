@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-	has_many :users through: :players
+	has_many :users, through: :players
 	has_many :players
 	belongs_to :user
 	
