@@ -10,13 +10,11 @@
 			<option>3</option>
 			<option>4</option>
 		</select><br>
-		<label for="game_size">Game Size:</label>    	
+		<label for="size">Game Size:</label>    	
 		<select align="5">
-			<option>Tiny</option>
-			<option>Small</option>
-			<option>Normal</option>
-			<option>Large</option>
-			<option>Huge</option>
+			<% Game::SIZES.each do |size| %>
+			<option><%= size %></option>
+			<% end %>
 		</select><br>
 		<input type='submit' value="Let's do this!" id="start_game">
 	</form><br>
