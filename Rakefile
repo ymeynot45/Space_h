@@ -116,6 +116,16 @@ namespace :db do
   task :version do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"
   end
+
+  namespace :schema do
+    desc "Create a db/schema.rb file that can be portably used against any DB supported by AR"
+    task :dump do
+      require 'active_record/schema_dumper'
+      File.open(ENV['SCHEMA'] || "./db/schema.rb", "w") do |file|
+        ActiveRecord::SchemaDumper.dump(ActiveRecord::Base.connection, file)
+      end
+    end
+  end
 end
 
 desc 'Start IRB with application environment loaded'
