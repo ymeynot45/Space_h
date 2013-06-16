@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :games_started, class_name: 'Games'
+  has_many :games, through: :players
+  has_many :players
+  
   validates :username, :password, :presence => :true
   validates :username, :uniqueness => :true
   validates :password, :length => { :minimum => 6 }
@@ -15,12 +19,5 @@ class User < ActiveRecord::Base
   def password=(new_password)
     @password = BCrypt::Password.create(new_password)
     self.password_hash = @password
-  end
-
-  def self.create(attribs)
-    user = User.new(attribs)
-    user.password = (attribs[:password])
-    user.save!
-    user
   end
 end
