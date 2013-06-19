@@ -1,5 +1,6 @@
 class Game < ActiveRecord::Base
 	SIZES = %w(Tiny Small Normal Large Huge)
+	NUM_PLAYERS = (2..4)
 
 	has_many :users, through: :players
 	has_many :players

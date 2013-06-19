@@ -6,9 +6,12 @@
 		<br>
 		<label for="number_of_players">Number of Players:</label>    	
 		<select align="5">
-			<option>2</option>
+			<% Game::NUM_PLAYERS.each do |num| %>
+				<option><%= num %></option>
+				<% end %>
+			<!-- <option>2</option>
 			<option>3</option>
-			<option>4</option>
+			<option>4</option> -->
 		</select><br>
 		<label for="size">Game Size:</label>    	
 		<select align="5">
