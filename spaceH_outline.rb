@@ -12,8 +12,8 @@ Players,
 	name
 	total_metal
 	total_cash
-	reseach_spending
-	ideal_climate (rand(1000))
+	#reseach_spending
+	ideal_tempature (rand(1000))
 
 
 	class Player(name)

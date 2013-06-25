@@ -38,7 +38,7 @@ class  Viewer
 		when reply == "large"
 			return 2
 		when reply == "huge"
-			return
+			return 1
 		else
 			puts "Please type one of the prompts."
 			prompt_for_game_size
