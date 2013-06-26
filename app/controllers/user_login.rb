@@ -1,7 +1,7 @@
 post '/create_user' do
   @user =User.new(params[:user])
   if @user.save
-    session[:user_id] = @user.id 
+    session[:user_id] = @user.id
     redirect to '/games'
   else
     redirect to '/'
@@ -17,7 +17,7 @@ post '/login' do
   if user
     session[:user_id] = user.id
     redirect to '/games'
-  else 
+  else
     redirect to '/'
   end
 end

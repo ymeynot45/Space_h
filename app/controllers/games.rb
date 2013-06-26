@@ -1,4 +1,4 @@
-get '/games' do 
+get '/games' do
 	erb :"games/index"
 end
 
@@ -8,7 +8,7 @@ get '/games/list' do
 	erb :"games/list"
 end
 
-get '/games/new' do 
+get '/games/new' do
 	erb :"games/new"
 end
 

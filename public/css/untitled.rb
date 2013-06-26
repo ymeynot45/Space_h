@@ -13,7 +13,7 @@ puts request.inspect
 
 
    new_user = User.new(params[:user])
-  if new_user.save 
+  if new_user.save
     session[:user_id] = new_user.id
     redirect '/'
   else

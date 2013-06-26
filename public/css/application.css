@@ -45,11 +45,11 @@ th {
   margin-left: 10px;
 }
 
-body, select, input, textarea {  
-    color: #444;  
-    font-family: Helvetica, Arial, sans-serif; 
+body, select, input, textarea {
+    color: #444;
+    font-family: Helvetica, Arial, sans-serif;
     background-color: #E8E8E8;
-}  
+}
 
 .container {
   margin: 20px auto;
@@ -58,7 +58,7 @@ body, select, input, textarea {
   border: 2px solid orange;
   background-color: skyblue;
   border-radius: 20px;
-   
+
 }
 th {
   text-align: left;

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :games_started, class_name: 'Games'
   has_many :games, through: :players
   has_many :players
-  
+
   validates :username, :password, :presence => :true
   validates :username, :uniqueness => :true
   validates :password, :length => { :minimum => 6 }
