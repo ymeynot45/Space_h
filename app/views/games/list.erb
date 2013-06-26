@@ -1,1 +1,14 @@
-list.erb
+<head><titile>Open Games to Join</title></head>
+	<fieldset>
+		<legend align="center">Game Listings</legend>
+
+		<ul>
+			<% @games_list.each do |game| %>
+			<li><a href="/<% game.id %>"><%= game.name%></a></li>
+			<%end%>
+		</ul>
+
+
+	</fieldset>
+
+
