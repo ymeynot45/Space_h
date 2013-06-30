@@ -12,8 +12,13 @@ get '/games/new' do
 	erb :"games/new"
 end
 
-post 'games' do
+#shouldn't this be 'games/new' ?
+post 'games/new' do
 	@game = Game.new(params[:name], params[:number_of_players], params[:game_size])
 	if @game.save
-		end
+		erb :"games/list"
+	else
+		erb :"games"
+	end
+	redirect to '/'
 end
