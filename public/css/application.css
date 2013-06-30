@@ -111,9 +111,8 @@ label {
 }
 
 .signup_container h1 {
-  /*color: white;*/
+  color: white;
 }
-
 
 #submit_button {
   background-color: #FF9966;
