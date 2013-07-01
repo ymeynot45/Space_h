@@ -1,4 +1,4 @@
-get '/user/:user_id' do
+get "/user/:user_id" do
   user_id = params[:user_id]
   @name = User.name
   

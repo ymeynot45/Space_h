@@ -1,0 +1,25 @@
+clip board
+
+
+<h2> New games starting. </h2>
+
+<TABLE BORDER="5">
+	<TR>
+		<TH COLSPAN="2"> 
+			<H3><BR> Available Games</H3>
+		</TH>
+	</TR>
+	<TR>
+		<TH>Game</TH>
+		<TH>Creator</TH>
+		<TH>Size</TH>
+		<TH>Current Players</TH>
+		<TH>Max Players</TH>
+	</TR>
+	<%@available_games.each #do |game| %>
+		<TR>
+			<TD><a href=""></TD> end
+		</TR>
+	
+</TABLE>
+

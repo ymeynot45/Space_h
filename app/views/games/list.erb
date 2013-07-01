@@ -3,43 +3,19 @@
 		<legend align="center">Game Listings</legend>
 
 		<ul>
-			<% @games_list.each do |game| %>
-			<li><a href="/<% game.id %>"><%= game.name%></a></li>
+	<p><%= @users[5].username%></p>
+			<% #@games_list.each do |game| %>
+			<% @users.each do |user| %>
+			<!-- <li><a href="/<% #game.id %>"><%= #game.name%></a></li> -->
+			<li><p><%= user.id%></p></li>
+			<li><a href="/<% user.id %>"><%= user.username%></a></li>
 			<%end%>
 		</ul>
 
 
 	</fieldset>
 
-
-
-
-
-
-
-<h2> New games starting. </h2>
-
-<TABLE BORDER="5">
-	<TR>
-		<TH COLSPAN="2"> 
-			<H3><BR> Available Games</H3>
-		</TH>
-	</TR>
-	<TR>
-		<TH>Game</TH>
-		<TH>Creator</TH>
-		<TH>Size</TH>
-		<TH>Current Players</TH>
-		<TH>Max Players</TH>
-<!--
-	</TR>
-	<%@available_games.each #do |game| %>
-		<TR>
-			<TD><a href="/ "></TD> end
-		</TR>
-	
-
-  -->
-
-
-</TABLE>
+<% @users.each do |user| %>
+<p><%= user.id%></p>
+<a href="/games/list/<% user.id %>"><%= user.username%></a><br>
+<%end%>

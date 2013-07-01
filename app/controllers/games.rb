@@ -17,7 +17,7 @@ post 'games/new' do
 end
 
 get '/games/list' do
-	@game_list = Game.all
-
+	#@game_list = Game.all
+	@users = User.all
 	erb :"games/list"
 end
