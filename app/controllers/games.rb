@@ -1,14 +1,18 @@
 get '/games' do
+	@display_left_nav = true
 	erb :"games/index"
 end
 
 get '/games/new' do
+	@display_left_nav = true
 	erb :"games/new"
 end
 
-post 'games/new' do
-	@game = Game.new(params[:name], params[:number_of_players], params[:game_size])
-	if @game.save
+post '/games' do
+	@display_left_nav = true
+	@game = Game.new(params[:game])
+	@game.creator = current_user
+	if @game.save!
 		redirect to "/games/list"
 	else
 		redirect to "/games"
@@ -17,7 +21,8 @@ post 'games/new' do
 end
 
 get '/games/list' do
-	#@game_list = Game.all
-	@users = User.all
+	@display_left_nav = true
+	@games = Game.all
+	#@users = User.all
 	erb :"games/list"
 end

@@ -6,15 +6,13 @@
   width: 15%;
   padding: 0 0 0 1em;
   color: white;
-  margin-bottom: 100%;
   padding-bottom: 100%;
   font-size: 10px;
-
 }
 
-#pregame_options ol li a{
+#pregame_options li a{
   font-size: 10pt;
-  color: white ! important;  /*doesn't work! Why?*/
+  color: white;
 }
 
 .left_links a{
@@ -241,7 +239,6 @@ h3 {
 
 #buttons {
   background-color: red;
-}
 }
 
 .button {

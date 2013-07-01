@@ -2,16 +2,16 @@
 <fieldset>
 	<legend align="center">Game Information</legend>
 	<form action="/games" method="POST" name="New Game Info">
-		<label for="game_name">Game Name:</label>   <input type="text" name="game_name" id="game_name">
+		<label for="game_name">Game Name:</label>   <input type="text" name="game[name]" id="game_name">
 		<br>
 		<label for="number_of_players">Number of Players:</label>    	
-		<select align="5">
+		<select align="5" name="game[number_of_players]">
 			<% Game::NUM_PLAYERS.each do |num| %>
 				<option><%= num %></option>
 				<% end %>
 		</select><br>
 		<label for="size">Game Size:</label>    	
-		<select align="5">
+		<select align="5" name="game[size]">
 			<% Game::SIZES.each do |size| %>
 			<option><%= size %></option>
 			<% end %>
