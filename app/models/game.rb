@@ -14,3 +14,5 @@ class Game < ActiveRecord::Base
 	validates :size, :inclusion => SIZES
 
 end
+
+#t.references :creator
