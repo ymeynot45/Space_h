@@ -10,8 +10,16 @@ end
 
 post '/games' do
 	@display_left_nav = true
-	@game = Game.new(params[:game])
-	@game.creator = current_user
+	
+	# potentially a security hole... because of the || or if done client side
+	# params[:game][:creator_id] ||= current_user.creator_id
+
+	# pretty verbose... but ok.
+	# game = Game.new(params[:game])
+	# game.creator = current_user
+
+	# ideally we should build new objects from the associations... like this:
+	@game = current_user.created_games.build(params[:game])
 	if @game.save!
 		redirect to "/games/list"
 	else
@@ -23,6 +31,5 @@ end
 get '/games/list' do
 	@display_left_nav = true
 	@games = Game.all
-	#@users = User.all
 	erb :"games/list"
 end

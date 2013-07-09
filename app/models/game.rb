@@ -4,7 +4,7 @@ class Game < ActiveRecord::Base
 
 	has_many :users, through: :players
 	has_many :players
-	belongs_to :creator, class_name: 'User', foreign_key: 'user_id' #this needs to change with a new migration.
+	belongs_to :creator, class_name: 'User' #, foreign_key: 'user_id' #this needs to change with a new migration.
 	
 	validates :name, :presence => true
 	validates :name, :uniqueness => true

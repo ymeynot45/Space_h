@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-  has_many :games_started, class_name: 'Games'
+  has_many :games_started, class_name: 'Game'
   has_many :games, through: :players
   has_many :players
+
+  has_many :created_games, class_name: 'Game', :foreign_key => 'creator_id'
 
   validates :username, :password, :presence => :true
   validates :username, :uniqueness => :true
