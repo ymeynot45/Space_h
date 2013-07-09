@@ -10,6 +10,12 @@
   font-size: 10px;
 }
 
+#pregame_options{
+  position: fixed;
+  top: 20;
+  left: 20;
+}
+
 #pregame_options li a{
   font-size: 10pt;
   color: white;
